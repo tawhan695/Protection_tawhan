@@ -13,10 +13,11 @@ import (
 	"syscall"
 	"time"
 
+	"./Library/linethrift"
+	"./Library/oop"
 	"github.com/kardianos/osext"
-
-	"botline/Library-mac/linethrift"
-	"botline/Library-mac/oop"
+	// "botline/Library-mac/linethrift"
+	// "botline/Library-mac/oop"
 )
 
 type User struct {
@@ -1607,7 +1608,7 @@ func perBots(cl *oop.Account) {
 					case 124:
 
 						op1, op2, op3, ctime := op.Param1, op.Param2, strings.Split(op.Param3, "\x1e"), op.CreatedTime
-						fmt.Println("เชิญเข้าสู่การแชท 124",op3)
+						fmt.Println("เชิญเข้าสู่การแชท 124", op3)
 						// fmt.Println("124")
 						if _, cek := data.ProInvite[op1]; cek {
 							if !fullAccess(op2) {
@@ -3788,7 +3789,7 @@ func perBots(cl *oop.Account) {
 											cl.SendMessage(to, "Contact Already in Owner list !..")
 										}
 									}
-									
+
 								}
 							} else if Scont == true && DemoteStaff == true {
 								if getAccess(ctime, cl.Mid) {
@@ -3800,7 +3801,7 @@ func perBots(cl *oop.Account) {
 											cl.SendMessage(to, "Contact Not have in Staff list !..")
 										}
 									}
-									
+
 								}
 							} else if Scont == true && DemoteAdmin == true {
 								if getAccess(ctime, cl.Mid) {
@@ -3815,7 +3816,7 @@ func perBots(cl *oop.Account) {
 								}
 							} else if Scont == true && DemoteOwner == true {
 								if getAccess(ctime, cl.Mid) {
-									
+
 									if fullAccess(sender) {
 										if oop.Contains(data.Owner, mid) {
 											data.Owner = oop.Remove(data.Owner, mid)
