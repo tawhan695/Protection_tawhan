@@ -18,7 +18,8 @@ go get github.com/valyala/fasthttp
 go get github.com/leekchan/timeutil
 go get github.com/shirou/gopsutil/mem
 go get github.com/kardianos/osext
-go get github.com/utahta/go-linenotify
+
+
 
 go run main.go (token.txt)
 
