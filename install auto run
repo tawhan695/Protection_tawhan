@@ -1,0 +1,39 @@
+nano bot.sh
+"
+#!/bin/bash
+cd ~
+./main token5
+
+"
+
+nano /etc/systemd/system/botrunner.service
+"
+[Unit]
+Description=botline
+After=network.target
+
+[Service]
+ExecStart=/root/bot.sh
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+"
+
+#setup
+
+cp botService.service /etc/systemd/system/botService.service
+
+chmod +x bot.sh
+chmod +x update.sh
+systemctl enable botService.service
+systemctl start botService.service
+systemctl status botService.service
+
+cp botService.service /etc/systemd/system/Guidelines.service
+systemctl enable Guidelines.service
+systemctl status Guidelines.service
+systemctl stop Guidelines.service
+systemctl start Guidelines.service
