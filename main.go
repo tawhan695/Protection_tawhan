@@ -69,8 +69,8 @@ var RAM int = 1
 var duedatecount int = 0
 var (
 	data      User
-	dataPath  = fmt.Sprintf("data2.json")
-	toeknPath = fmt.Sprintf("token2.txt")
+	dataPath  = fmt.Sprintf("data.json")
+	toeknPath = fmt.Sprintf("token.txt")
 	Maker     = []string{
 		"u53ab6fa03c2838678a07a10fd142eb81",
 	}
